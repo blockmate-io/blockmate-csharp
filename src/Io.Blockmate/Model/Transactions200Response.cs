@@ -38,9 +38,10 @@ namespace Io.Blockmate.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Transactions200Response" /> class.
         /// </summary>
+        /// <param name="pageCursor">Use this as &#x60;cursor&#x60; in the next request to get the next page. The &#x60;page_cursor&#x60; has a one hour validity..</param>
         /// <param name="accounts">accounts.</param>
         /// <param name="transactions">transactions (required).</param>
-        public Transactions200Response(List<Transactions200ResponseAccountsInner> accounts = default(List<Transactions200ResponseAccountsInner>), List<Transaction> transactions = default(List<Transaction>))
+        public Transactions200Response(string pageCursor = default(string), List<Transactions200ResponseAccountsInner> accounts = default(List<Transactions200ResponseAccountsInner>), List<Transaction> transactions = default(List<Transaction>))
         {
             // to ensure "transactions" is required (not null)
             if (transactions == null)
@@ -52,8 +53,16 @@ namespace Io.Blockmate.Model
                 this.Transactions = transactions;
             }
 
+            this.PageCursor = pageCursor;
             this.Accounts = accounts;
         }
+
+        /// <summary>
+        /// Use this as &#x60;cursor&#x60; in the next request to get the next page. The &#x60;page_cursor&#x60; has a one hour validity.
+        /// </summary>
+        /// <value>Use this as &#x60;cursor&#x60; in the next request to get the next page. The &#x60;page_cursor&#x60; has a one hour validity.</value>
+        [DataMember(Name="page_cursor", EmitDefaultValue=false)]
+        public string PageCursor { get; set; }
 
         /// <summary>
         /// Gets or Sets Accounts
@@ -75,6 +84,7 @@ namespace Io.Blockmate.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Transactions200Response {\n");
+            sb.Append("  PageCursor: ").Append(PageCursor).Append("\n");
             sb.Append("  Accounts: ").Append(Accounts).Append("\n");
             sb.Append("  Transactions: ").Append(Transactions).Append("\n");
             sb.Append("}\n");
@@ -112,6 +122,11 @@ namespace Io.Blockmate.Model
 
             return 
                 (
+                    this.PageCursor == input.PageCursor ||
+                    (this.PageCursor != null &&
+                    this.PageCursor.Equals(input.PageCursor))
+                ) && 
+                (
                     this.Accounts == input.Accounts ||
                     this.Accounts != null &&
                     input.Accounts != null &&
@@ -134,6 +149,8 @@ namespace Io.Blockmate.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.PageCursor != null)
+                    hashCode = hashCode * 59 + this.PageCursor.GetHashCode();
                 if (this.Accounts != null)
                     hashCode = hashCode * 59 + this.Accounts.GetHashCode();
                 if (this.Transactions != null)

@@ -110,12 +110,14 @@ namespace Io.Blockmate.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="since">Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  (optional)</param>
-        /// <param name="until">Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  (optional)</param>
+        /// <param name="since">Set time from which the transactions will be get.  (optional)</param>
+        /// <param name="until">Set time to which the transactions will be get. The default value is the actual date.  (optional)</param>
+        /// <param name="limit">Limit the number of the transactions in the response. Default page size is 50.  (optional)</param>
+        /// <param name="cursor">Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  (optional)</param>
         /// <param name="currency">Currency to convert to.  (optional)</param>
         /// <param name="accountFilter">Filter results to only provided account. When omitted, it returns all transactions from all accounts.  (optional)</param>
         /// <returns>Transactions200Response</returns>
-        Transactions200Response Transactions (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), string currency = default(string), string accountFilter = default(string));
+        Transactions200Response Transactions (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), decimal? limit = default(decimal?), string cursor = default(string), string currency = default(string), string accountFilter = default(string));
 
         /// <summary>
         /// Get transactions
@@ -124,12 +126,14 @@ namespace Io.Blockmate.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="since">Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  (optional)</param>
-        /// <param name="until">Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  (optional)</param>
+        /// <param name="since">Set time from which the transactions will be get.  (optional)</param>
+        /// <param name="until">Set time to which the transactions will be get. The default value is the actual date.  (optional)</param>
+        /// <param name="limit">Limit the number of the transactions in the response. Default page size is 50.  (optional)</param>
+        /// <param name="cursor">Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  (optional)</param>
         /// <param name="currency">Currency to convert to.  (optional)</param>
         /// <param name="accountFilter">Filter results to only provided account. When omitted, it returns all transactions from all accounts.  (optional)</param>
         /// <returns>ApiResponse of Transactions200Response</returns>
-        ApiResponse<Transactions200Response> TransactionsWithHttpInfo (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), string currency = default(string), string accountFilter = default(string));
+        ApiResponse<Transactions200Response> TransactionsWithHttpInfo (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), decimal? limit = default(decimal?), string cursor = default(string), string currency = default(string), string accountFilter = default(string));
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -225,13 +229,15 @@ namespace Io.Blockmate.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="since">Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  (optional)</param>
-        /// <param name="until">Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  (optional)</param>
+        /// <param name="since">Set time from which the transactions will be get.  (optional)</param>
+        /// <param name="until">Set time to which the transactions will be get. The default value is the actual date.  (optional)</param>
+        /// <param name="limit">Limit the number of the transactions in the response. Default page size is 50.  (optional)</param>
+        /// <param name="cursor">Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  (optional)</param>
         /// <param name="currency">Currency to convert to.  (optional)</param>
         /// <param name="accountFilter">Filter results to only provided account. When omitted, it returns all transactions from all accounts.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Transactions200Response</returns>
-        System.Threading.Tasks.Task<Transactions200Response> TransactionsAsync (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), string currency = default(string), string accountFilter = default(string), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Transactions200Response> TransactionsAsync (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), decimal? limit = default(decimal?), string cursor = default(string), string currency = default(string), string accountFilter = default(string), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Get transactions
@@ -240,13 +246,15 @@ namespace Io.Blockmate.Api
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="since">Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  (optional)</param>
-        /// <param name="until">Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  (optional)</param>
+        /// <param name="since">Set time from which the transactions will be get.  (optional)</param>
+        /// <param name="until">Set time to which the transactions will be get. The default value is the actual date.  (optional)</param>
+        /// <param name="limit">Limit the number of the transactions in the response. Default page size is 50.  (optional)</param>
+        /// <param name="cursor">Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  (optional)</param>
         /// <param name="currency">Currency to convert to.  (optional)</param>
         /// <param name="accountFilter">Filter results to only provided account. When omitted, it returns all transactions from all accounts.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Transactions200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Transactions200Response>> TransactionsWithHttpInfoAsync (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), string currency = default(string), string accountFilter = default(string), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Transactions200Response>> TransactionsWithHttpInfoAsync (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), decimal? limit = default(decimal?), string cursor = default(string), string currency = default(string), string accountFilter = default(string), CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -908,14 +916,16 @@ namespace Io.Blockmate.Api
         /// Get transactions 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="since">Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  (optional)</param>
-        /// <param name="until">Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  (optional)</param>
+        /// <param name="since">Set time from which the transactions will be get.  (optional)</param>
+        /// <param name="until">Set time to which the transactions will be get. The default value is the actual date.  (optional)</param>
+        /// <param name="limit">Limit the number of the transactions in the response. Default page size is 50.  (optional)</param>
+        /// <param name="cursor">Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  (optional)</param>
         /// <param name="currency">Currency to convert to.  (optional)</param>
         /// <param name="accountFilter">Filter results to only provided account. When omitted, it returns all transactions from all accounts.  (optional)</param>
         /// <returns>Transactions200Response</returns>
-        public Transactions200Response Transactions (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), string currency = default(string), string accountFilter = default(string))
+        public Transactions200Response Transactions (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), decimal? limit = default(decimal?), string cursor = default(string), string currency = default(string), string accountFilter = default(string))
         {
-             ApiResponse<Transactions200Response> localVarResponse = TransactionsWithHttpInfo(since, until, currency, accountFilter);
+             ApiResponse<Transactions200Response> localVarResponse = TransactionsWithHttpInfo(since, until, limit, cursor, currency, accountFilter);
              return localVarResponse.Data;
         }
 
@@ -923,12 +933,14 @@ namespace Io.Blockmate.Api
         /// Get transactions 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="since">Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  (optional)</param>
-        /// <param name="until">Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  (optional)</param>
+        /// <param name="since">Set time from which the transactions will be get.  (optional)</param>
+        /// <param name="until">Set time to which the transactions will be get. The default value is the actual date.  (optional)</param>
+        /// <param name="limit">Limit the number of the transactions in the response. Default page size is 50.  (optional)</param>
+        /// <param name="cursor">Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  (optional)</param>
         /// <param name="currency">Currency to convert to.  (optional)</param>
         /// <param name="accountFilter">Filter results to only provided account. When omitted, it returns all transactions from all accounts.  (optional)</param>
         /// <returns>ApiResponse of Transactions200Response</returns>
-        public ApiResponse<Transactions200Response> TransactionsWithHttpInfo (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), string currency = default(string), string accountFilter = default(string))
+        public ApiResponse<Transactions200Response> TransactionsWithHttpInfo (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), decimal? limit = default(decimal?), string cursor = default(string), string currency = default(string), string accountFilter = default(string))
         {
 
             var localVarPath = "/v1/aggregate/transactions";
@@ -954,6 +966,8 @@ namespace Io.Blockmate.Api
 
             if (since != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "since", since)); // query parameter
             if (until != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "until", until)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             if (currency != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "currency", currency)); // query parameter
             if (accountFilter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "account-filter", accountFilter)); // query parameter
 
@@ -986,15 +1000,17 @@ namespace Io.Blockmate.Api
         /// Get transactions 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="since">Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  (optional)</param>
-        /// <param name="until">Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  (optional)</param>
+        /// <param name="since">Set time from which the transactions will be get.  (optional)</param>
+        /// <param name="until">Set time to which the transactions will be get. The default value is the actual date.  (optional)</param>
+        /// <param name="limit">Limit the number of the transactions in the response. Default page size is 50.  (optional)</param>
+        /// <param name="cursor">Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  (optional)</param>
         /// <param name="currency">Currency to convert to.  (optional)</param>
         /// <param name="accountFilter">Filter results to only provided account. When omitted, it returns all transactions from all accounts.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of Transactions200Response</returns>
-        public async System.Threading.Tasks.Task<Transactions200Response> TransactionsAsync (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), string currency = default(string), string accountFilter = default(string), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Transactions200Response> TransactionsAsync (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), decimal? limit = default(decimal?), string cursor = default(string), string currency = default(string), string accountFilter = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Transactions200Response> localVarResponse = await TransactionsWithHttpInfoAsync(since, until, currency, accountFilter, cancellationToken);
+             ApiResponse<Transactions200Response> localVarResponse = await TransactionsWithHttpInfoAsync(since, until, limit, cursor, currency, accountFilter, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -1003,13 +1019,15 @@ namespace Io.Blockmate.Api
         /// Get transactions 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="since">Set time from which the transactions will be get. The parameter is passed as-is to backend services. The default value is 30 days before the actual date or 30 days before the date specified in \&quot;until\&quot; parameter.  (optional)</param>
-        /// <param name="until">Set time to which the transactions will be get. The parameter is passed as-is to backend services. The default value is the actual date.  (optional)</param>
+        /// <param name="since">Set time from which the transactions will be get.  (optional)</param>
+        /// <param name="until">Set time to which the transactions will be get. The default value is the actual date.  (optional)</param>
+        /// <param name="limit">Limit the number of the transactions in the response. Default page size is 50.  (optional)</param>
+        /// <param name="cursor">Specify on requesting the next page. Use the &#x60;page_cursor&#x60; from the previous response.  (optional)</param>
         /// <param name="currency">Currency to convert to.  (optional)</param>
         /// <param name="accountFilter">Filter results to only provided account. When omitted, it returns all transactions from all accounts.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Transactions200Response)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Transactions200Response>> TransactionsWithHttpInfoAsync (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), string currency = default(string), string accountFilter = default(string), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<Transactions200Response>> TransactionsWithHttpInfoAsync (DateTime? since = default(DateTime?), DateTime? until = default(DateTime?), decimal? limit = default(decimal?), string cursor = default(string), string currency = default(string), string accountFilter = default(string), CancellationToken cancellationToken = default(CancellationToken))
         {
 
             var localVarPath = "/v1/aggregate/transactions";
@@ -1035,6 +1053,8 @@ namespace Io.Blockmate.Api
 
             if (since != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "since", since)); // query parameter
             if (until != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "until", until)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (cursor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cursor", cursor)); // query parameter
             if (currency != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "currency", currency)); // query parameter
             if (accountFilter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "account-filter", accountFilter)); // query parameter
 
