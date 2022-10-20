@@ -104,6 +104,25 @@ namespace Io.Blockmate.Api
         /// <returns>ApiResponse of Balance200Response</returns>
         ApiResponse<Balance200Response> BalanceWithHttpInfo (string currency = default(string));
         /// <summary>
+        /// Get NFT metadata
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Dictionary<string, NFTMetadata200ResponseValue></returns>
+        Dictionary<string, NFTMetadata200ResponseValue> NFTMetadata ();
+
+        /// <summary>
+        /// Get NFT metadata
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Dictionary<string, NFTMetadata200ResponseValue></returns>
+        ApiResponse<Dictionary<string, NFTMetadata200ResponseValue>> NFTMetadataWithHttpInfo ();
+        /// <summary>
         /// Get transactions
         /// </summary>
         /// <remarks>
@@ -222,6 +241,27 @@ namespace Io.Blockmate.Api
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (Balance200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<Balance200Response>> BalanceWithHttpInfoAsync (string currency = default(string), CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Get NFT metadata
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of Dictionary<string, NFTMetadata200ResponseValue></returns>
+        System.Threading.Tasks.Task<Dictionary<string, NFTMetadata200ResponseValue>> NFTMetadataAsync (CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Get NFT metadata
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, NFTMetadata200ResponseValue&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, NFTMetadata200ResponseValue>>> NFTMetadataWithHttpInfoAsync (CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// Get transactions
         /// </summary>
@@ -910,6 +950,141 @@ namespace Io.Blockmate.Api
             return new ApiResponse<Balance200Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (Balance200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Balance200Response)));
+        }
+
+        /// <summary>
+        /// Get NFT metadata 
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Dictionary<string, NFTMetadata200ResponseValue></returns>
+        public Dictionary<string, NFTMetadata200ResponseValue> NFTMetadata ()
+        {
+             ApiResponse<Dictionary<string, NFTMetadata200ResponseValue>> localVarResponse = NFTMetadataWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get NFT metadata 
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Dictionary<string, NFTMetadata200ResponseValue></returns>
+        public ApiResponse<Dictionary<string, NFTMetadata200ResponseValue>> NFTMetadataWithHttpInfo ()
+        {
+
+            var localVarPath = "/v1/aggregate/nft_metadata";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (UserJWT) required
+            // http bearer authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("NFTMetadata", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, NFTMetadata200ResponseValue>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Dictionary<string, NFTMetadata200ResponseValue>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, NFTMetadata200ResponseValue>)));
+        }
+
+        /// <summary>
+        /// Get NFT metadata 
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of Dictionary<string, NFTMetadata200ResponseValue></returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, NFTMetadata200ResponseValue>> NFTMetadataAsync (CancellationToken cancellationToken = default(CancellationToken))
+        {
+             ApiResponse<Dictionary<string, NFTMetadata200ResponseValue>> localVarResponse = await NFTMetadataWithHttpInfoAsync(cancellationToken);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get NFT metadata 
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, NFTMetadata200ResponseValue&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, NFTMetadata200ResponseValue>>> NFTMetadataWithHttpInfoAsync (CancellationToken cancellationToken = default(CancellationToken))
+        {
+
+            var localVarPath = "/v1/aggregate/nft_metadata";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (UserJWT) required
+            // http bearer authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType, cancellationToken);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("NFTMetadata", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, NFTMetadata200ResponseValue>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Dictionary<string, NFTMetadata200ResponseValue>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, NFTMetadata200ResponseValue>)));
         }
 
         /// <summary>
