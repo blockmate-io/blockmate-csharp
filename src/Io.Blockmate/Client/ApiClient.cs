@@ -54,12 +54,12 @@ namespace Io.Blockmate.Client
         public ApiClient()
         {
             Configuration = Io.Blockmate.Client.Configuration.Default;
-            RestClient = new RestClient("http://localhost");
+            RestClient = new RestClient("https://api.blockmate.io");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (http://localhost).
+        /// with default base path (https://api.blockmate.io).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
@@ -74,7 +74,7 @@ namespace Io.Blockmate.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "http://localhost")
+        public ApiClient(String basePath = "https://api.blockmate.io")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

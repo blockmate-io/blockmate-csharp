@@ -8,7 +8,9 @@ git_push.sh
 src/Io.Blockmate/Api/AccountProviderInfoApi.cs
 src/Io.Blockmate/Api/AddressNameAndCategoryInfoApi.cs
 src/Io.Blockmate/Api/AggregatedInfoApi.cs
+src/Io.Blockmate/Api/AnalyticsApi.cs
 src/Io.Blockmate/Api/AuthenticationApi.cs
+src/Io.Blockmate/Api/ENSApi.cs
 src/Io.Blockmate/Api/ExchangeRateInfoApi.cs
 src/Io.Blockmate/Api/RiskInfoApi.cs
 src/Io.Blockmate/Api/UserManagementApi.cs
@@ -48,8 +50,15 @@ src/Io.Blockmate/Model/GetAccountHint200Response.cs
 src/Io.Blockmate/Model/GetAccountHint200ResponseFields.cs
 src/Io.Blockmate/Model/GetAccountHint403Response.cs
 src/Io.Blockmate/Model/GetAccountHint404Response.cs
-src/Io.Blockmate/Model/GetAddressNameInfo200Response.cs
+src/Io.Blockmate/Model/GetAddressFromDomain200Response.cs
+src/Io.Blockmate/Model/GetAddressNameInfoSingle200Response.cs
 src/Io.Blockmate/Model/GetAddressRiskScore200Response.cs
+src/Io.Blockmate/Model/GetAnalytics200Response.cs
+src/Io.Blockmate/Model/GetAnalytics200ResponseValue.cs
+src/Io.Blockmate/Model/GetDomainFromAddress200Response.cs
+src/Io.Blockmate/Model/GetDomainFromAddress200ResponseMetadata.cs
+src/Io.Blockmate/Model/GetDomainFromAddress200ResponseMetadataAttributesInner.cs
+src/Io.Blockmate/Model/GetDomainFromAddress200ResponseMetadataAttributesInnerValue.cs
 src/Io.Blockmate/Model/GetTransactionRiskScore200Response.cs
 src/Io.Blockmate/Model/GetUser404Response.cs
 src/Io.Blockmate/Model/Metadata.cs

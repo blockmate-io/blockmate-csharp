@@ -22,122 +22,114 @@ namespace Io.Blockmate.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IAddressNameAndCategoryInfoApi : IApiAccessor
+    public interface IENSApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get address name and category info for multiple addresses
+        /// Get address for specified ENS domain
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <param name="requestBody">OK (optional)</param>
-        /// <returns>Dictionary<string, GetAddressNameInfoSingle200Response></returns>
-        Dictionary<string, GetAddressNameInfoSingle200Response> GetAddressNameInfoMulti (string chain, List<string> requestBody = default(List<string>));
+        /// <param name="domain">ENS domain for which Ethereum address should be returned</param>
+        /// <returns>GetAddressFromDomain200Response</returns>
+        GetAddressFromDomain200Response GetAddressFromDomain (string domain);
 
         /// <summary>
-        /// Get address name and category info for multiple addresses
+        /// Get address for specified ENS domain
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <param name="requestBody">OK (optional)</param>
-        /// <returns>ApiResponse of Dictionary<string, GetAddressNameInfoSingle200Response></returns>
-        ApiResponse<Dictionary<string, GetAddressNameInfoSingle200Response>> GetAddressNameInfoMultiWithHttpInfo (string chain, List<string> requestBody = default(List<string>));
+        /// <param name="domain">ENS domain for which Ethereum address should be returned</param>
+        /// <returns>ApiResponse of GetAddressFromDomain200Response</returns>
+        ApiResponse<GetAddressFromDomain200Response> GetAddressFromDomainWithHttpInfo (string domain);
         /// <summary>
-        /// Get address name and category info for single address
+        /// Get domain and metadata for specified ENS address
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="address">Address for which name and category should be returned</param>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <returns>GetAddressNameInfoSingle200Response</returns>
-        GetAddressNameInfoSingle200Response GetAddressNameInfoSingle (string address, string chain);
+        /// <param name="address">Ethereum address for which domain and metadata should be returned</param>
+        /// <returns>GetDomainFromAddress200Response</returns>
+        GetDomainFromAddress200Response GetDomainFromAddress (string address);
 
         /// <summary>
-        /// Get address name and category info for single address
+        /// Get domain and metadata for specified ENS address
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="address">Address for which name and category should be returned</param>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <returns>ApiResponse of GetAddressNameInfoSingle200Response</returns>
-        ApiResponse<GetAddressNameInfoSingle200Response> GetAddressNameInfoSingleWithHttpInfo (string address, string chain);
+        /// <param name="address">Ethereum address for which domain and metadata should be returned</param>
+        /// <returns>ApiResponse of GetDomainFromAddress200Response</returns>
+        ApiResponse<GetDomainFromAddress200Response> GetDomainFromAddressWithHttpInfo (string address);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get address name and category info for multiple addresses
+        /// Get address for specified ENS domain
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <param name="requestBody">OK (optional)</param>
+        /// <param name="domain">ENS domain for which Ethereum address should be returned</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Dictionary<string, GetAddressNameInfoSingle200Response></returns>
-        System.Threading.Tasks.Task<Dictionary<string, GetAddressNameInfoSingle200Response>> GetAddressNameInfoMultiAsync (string chain, List<string> requestBody = default(List<string>), CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of GetAddressFromDomain200Response</returns>
+        System.Threading.Tasks.Task<GetAddressFromDomain200Response> GetAddressFromDomainAsync (string domain, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Get address name and category info for multiple addresses
+        /// Get address for specified ENS domain
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <param name="requestBody">OK (optional)</param>
+        /// <param name="domain">ENS domain for which Ethereum address should be returned</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, GetAddressNameInfoSingle200Response&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, GetAddressNameInfoSingle200Response>>> GetAddressNameInfoMultiWithHttpInfoAsync (string chain, List<string> requestBody = default(List<string>), CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (GetAddressFromDomain200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetAddressFromDomain200Response>> GetAddressFromDomainWithHttpInfoAsync (string domain, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
-        /// Get address name and category info for single address
+        /// Get domain and metadata for specified ENS address
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="address">Address for which name and category should be returned</param>
-        /// <param name="chain">Blockchain identifier</param>
+        /// <param name="address">Ethereum address for which domain and metadata should be returned</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of GetAddressNameInfoSingle200Response</returns>
-        System.Threading.Tasks.Task<GetAddressNameInfoSingle200Response> GetAddressNameInfoSingleAsync (string address, string chain, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of GetDomainFromAddress200Response</returns>
+        System.Threading.Tasks.Task<GetDomainFromAddress200Response> GetDomainFromAddressAsync (string address, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Get address name and category info for single address
+        /// Get domain and metadata for specified ENS address
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="address">Address for which name and category should be returned</param>
-        /// <param name="chain">Blockchain identifier</param>
+        /// <param name="address">Ethereum address for which domain and metadata should be returned</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (GetAddressNameInfoSingle200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAddressNameInfoSingle200Response>> GetAddressNameInfoSingleWithHttpInfoAsync (string address, string chain, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (GetDomainFromAddress200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetDomainFromAddress200Response>> GetDomainFromAddressWithHttpInfoAsync (string address, CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class AddressNameAndCategoryInfoApi : IAddressNameAndCategoryInfoApi
+    public partial class ENSApi : IENSApi
     {
         private Io.Blockmate.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddressNameAndCategoryInfoApi"/> class.
+        /// Initializes a new instance of the <see cref="ENSApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public AddressNameAndCategoryInfoApi(String basePath)
+        public ENSApi(String basePath)
         {
             this.Configuration = new Io.Blockmate.Client.Configuration { BasePath = basePath };
 
@@ -145,10 +137,10 @@ namespace Io.Blockmate.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddressNameAndCategoryInfoApi"/> class
+        /// Initializes a new instance of the <see cref="ENSApi"/> class
         /// </summary>
         /// <returns></returns>
-        public AddressNameAndCategoryInfoApi()
+        public ENSApi()
         {
             this.Configuration = Io.Blockmate.Client.Configuration.Default;
 
@@ -156,12 +148,12 @@ namespace Io.Blockmate.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddressNameAndCategoryInfoApi"/> class
+        /// Initializes a new instance of the <see cref="ENSApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public AddressNameAndCategoryInfoApi(Io.Blockmate.Client.Configuration configuration = null)
+        public ENSApi(Io.Blockmate.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Io.Blockmate.Client.Configuration.Default;
@@ -235,32 +227,30 @@ namespace Io.Blockmate.Api
         }
 
         /// <summary>
-        /// Get address name and category info for multiple addresses 
+        /// Get address for specified ENS domain 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <param name="requestBody">OK (optional)</param>
-        /// <returns>Dictionary<string, GetAddressNameInfoSingle200Response></returns>
-        public Dictionary<string, GetAddressNameInfoSingle200Response> GetAddressNameInfoMulti (string chain, List<string> requestBody = default(List<string>))
+        /// <param name="domain">ENS domain for which Ethereum address should be returned</param>
+        /// <returns>GetAddressFromDomain200Response</returns>
+        public GetAddressFromDomain200Response GetAddressFromDomain (string domain)
         {
-             ApiResponse<Dictionary<string, GetAddressNameInfoSingle200Response>> localVarResponse = GetAddressNameInfoMultiWithHttpInfo(chain, requestBody);
+             ApiResponse<GetAddressFromDomain200Response> localVarResponse = GetAddressFromDomainWithHttpInfo(domain);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get address name and category info for multiple addresses 
+        /// Get address for specified ENS domain 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <param name="requestBody">OK (optional)</param>
-        /// <returns>ApiResponse of Dictionary<string, GetAddressNameInfoSingle200Response></returns>
-        public ApiResponse<Dictionary<string, GetAddressNameInfoSingle200Response>> GetAddressNameInfoMultiWithHttpInfo (string chain, List<string> requestBody = default(List<string>))
+        /// <param name="domain">ENS domain for which Ethereum address should be returned</param>
+        /// <returns>ApiResponse of GetAddressFromDomain200Response</returns>
+        public ApiResponse<GetAddressFromDomain200Response> GetAddressFromDomainWithHttpInfo (string domain)
         {
-            // verify the required parameter 'chain' is set
-            if (chain == null)
-                throw new ApiException(400, "Missing required parameter 'chain' when calling AddressNameAndCategoryInfoApi->GetAddressNameInfoMulti");
+            // verify the required parameter 'domain' is set
+            if (domain == null)
+                throw new ApiException(400, "Missing required parameter 'domain' when calling ENSApi->GetAddressFromDomain");
 
-            var localVarPath = "/v1/addressname/multi";
+            var localVarPath = "/v1/ens/addressFromDomain";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -270,7 +260,6 @@ namespace Io.Blockmate.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -282,15 +271,7 @@ namespace Io.Blockmate.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (chain != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "chain", chain)); // query parameter
-            if (requestBody != null && requestBody.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(requestBody); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = requestBody; // byte array
-            }
+            if (domain != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "domain", domain)); // query parameter
 
             // authentication (UserJWT) required
             // http bearer authentication required
@@ -301,52 +282,50 @@ namespace Io.Blockmate.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetAddressNameInfoMulti", localVarResponse);
+                Exception exception = ExceptionFactory("GetAddressFromDomain", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Dictionary<string, GetAddressNameInfoSingle200Response>>(localVarStatusCode,
+            return new ApiResponse<GetAddressFromDomain200Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Dictionary<string, GetAddressNameInfoSingle200Response>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, GetAddressNameInfoSingle200Response>)));
+                (GetAddressFromDomain200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAddressFromDomain200Response)));
         }
 
         /// <summary>
-        /// Get address name and category info for multiple addresses 
+        /// Get address for specified ENS domain 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <param name="requestBody">OK (optional)</param>
+        /// <param name="domain">ENS domain for which Ethereum address should be returned</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of Dictionary<string, GetAddressNameInfoSingle200Response></returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, GetAddressNameInfoSingle200Response>> GetAddressNameInfoMultiAsync (string chain, List<string> requestBody = default(List<string>), CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of GetAddressFromDomain200Response</returns>
+        public async System.Threading.Tasks.Task<GetAddressFromDomain200Response> GetAddressFromDomainAsync (string domain, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<Dictionary<string, GetAddressNameInfoSingle200Response>> localVarResponse = await GetAddressNameInfoMultiWithHttpInfoAsync(chain, requestBody, cancellationToken);
+             ApiResponse<GetAddressFromDomain200Response> localVarResponse = await GetAddressFromDomainWithHttpInfoAsync(domain, cancellationToken);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get address name and category info for multiple addresses 
+        /// Get address for specified ENS domain 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <param name="requestBody">OK (optional)</param>
+        /// <param name="domain">ENS domain for which Ethereum address should be returned</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, GetAddressNameInfoSingle200Response&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, GetAddressNameInfoSingle200Response>>> GetAddressNameInfoMultiWithHttpInfoAsync (string chain, List<string> requestBody = default(List<string>), CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (GetAddressFromDomain200Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetAddressFromDomain200Response>> GetAddressFromDomainWithHttpInfoAsync (string domain, CancellationToken cancellationToken = default(CancellationToken))
         {
-            // verify the required parameter 'chain' is set
-            if (chain == null)
-                throw new ApiException(400, "Missing required parameter 'chain' when calling AddressNameAndCategoryInfoApi->GetAddressNameInfoMulti");
+            // verify the required parameter 'domain' is set
+            if (domain == null)
+                throw new ApiException(400, "Missing required parameter 'domain' when calling ENSApi->GetAddressFromDomain");
 
-            var localVarPath = "/v1/addressname/multi";
+            var localVarPath = "/v1/ens/addressFromDomain";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -356,7 +335,6 @@ namespace Io.Blockmate.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -368,15 +346,7 @@ namespace Io.Blockmate.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (chain != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "chain", chain)); // query parameter
-            if (requestBody != null && requestBody.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(requestBody); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = requestBody; // byte array
-            }
+            if (domain != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "domain", domain)); // query parameter
 
             // authentication (UserJWT) required
             // http bearer authentication required
@@ -387,52 +357,47 @@ namespace Io.Blockmate.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType, cancellationToken);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetAddressNameInfoMulti", localVarResponse);
+                Exception exception = ExceptionFactory("GetAddressFromDomain", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Dictionary<string, GetAddressNameInfoSingle200Response>>(localVarStatusCode,
+            return new ApiResponse<GetAddressFromDomain200Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (Dictionary<string, GetAddressNameInfoSingle200Response>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, GetAddressNameInfoSingle200Response>)));
+                (GetAddressFromDomain200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAddressFromDomain200Response)));
         }
 
         /// <summary>
-        /// Get address name and category info for single address 
+        /// Get domain and metadata for specified ENS address 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="address">Address for which name and category should be returned</param>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <returns>GetAddressNameInfoSingle200Response</returns>
-        public GetAddressNameInfoSingle200Response GetAddressNameInfoSingle (string address, string chain)
+        /// <param name="address">Ethereum address for which domain and metadata should be returned</param>
+        /// <returns>GetDomainFromAddress200Response</returns>
+        public GetDomainFromAddress200Response GetDomainFromAddress (string address)
         {
-             ApiResponse<GetAddressNameInfoSingle200Response> localVarResponse = GetAddressNameInfoSingleWithHttpInfo(address, chain);
+             ApiResponse<GetDomainFromAddress200Response> localVarResponse = GetDomainFromAddressWithHttpInfo(address);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get address name and category info for single address 
+        /// Get domain and metadata for specified ENS address 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="address">Address for which name and category should be returned</param>
-        /// <param name="chain">Blockchain identifier</param>
-        /// <returns>ApiResponse of GetAddressNameInfoSingle200Response</returns>
-        public ApiResponse<GetAddressNameInfoSingle200Response> GetAddressNameInfoSingleWithHttpInfo (string address, string chain)
+        /// <param name="address">Ethereum address for which domain and metadata should be returned</param>
+        /// <returns>ApiResponse of GetDomainFromAddress200Response</returns>
+        public ApiResponse<GetDomainFromAddress200Response> GetDomainFromAddressWithHttpInfo (string address)
         {
             // verify the required parameter 'address' is set
             if (address == null)
-                throw new ApiException(400, "Missing required parameter 'address' when calling AddressNameAndCategoryInfoApi->GetAddressNameInfoSingle");
-            // verify the required parameter 'chain' is set
-            if (chain == null)
-                throw new ApiException(400, "Missing required parameter 'chain' when calling AddressNameAndCategoryInfoApi->GetAddressNameInfoSingle");
+                throw new ApiException(400, "Missing required parameter 'address' when calling ENSApi->GetDomainFromAddress");
 
-            var localVarPath = "/v1/addressname/simple";
+            var localVarPath = "/v1/ens/domainFromAddress";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -454,7 +419,6 @@ namespace Io.Blockmate.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (address != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "address", address)); // query parameter
-            if (chain != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "chain", chain)); // query parameter
 
             // authentication (UserJWT) required
             // http bearer authentication required
@@ -472,48 +436,43 @@ namespace Io.Blockmate.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetAddressNameInfoSingle", localVarResponse);
+                Exception exception = ExceptionFactory("GetDomainFromAddress", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GetAddressNameInfoSingle200Response>(localVarStatusCode,
+            return new ApiResponse<GetDomainFromAddress200Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (GetAddressNameInfoSingle200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAddressNameInfoSingle200Response)));
+                (GetDomainFromAddress200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDomainFromAddress200Response)));
         }
 
         /// <summary>
-        /// Get address name and category info for single address 
+        /// Get domain and metadata for specified ENS address 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="address">Address for which name and category should be returned</param>
-        /// <param name="chain">Blockchain identifier</param>
+        /// <param name="address">Ethereum address for which domain and metadata should be returned</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of GetAddressNameInfoSingle200Response</returns>
-        public async System.Threading.Tasks.Task<GetAddressNameInfoSingle200Response> GetAddressNameInfoSingleAsync (string address, string chain, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of GetDomainFromAddress200Response</returns>
+        public async System.Threading.Tasks.Task<GetDomainFromAddress200Response> GetDomainFromAddressAsync (string address, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<GetAddressNameInfoSingle200Response> localVarResponse = await GetAddressNameInfoSingleWithHttpInfoAsync(address, chain, cancellationToken);
+             ApiResponse<GetDomainFromAddress200Response> localVarResponse = await GetDomainFromAddressWithHttpInfoAsync(address, cancellationToken);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get address name and category info for single address 
+        /// Get domain and metadata for specified ENS address 
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="address">Address for which name and category should be returned</param>
-        /// <param name="chain">Blockchain identifier</param>
+        /// <param name="address">Ethereum address for which domain and metadata should be returned</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (GetAddressNameInfoSingle200Response)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetAddressNameInfoSingle200Response>> GetAddressNameInfoSingleWithHttpInfoAsync (string address, string chain, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (GetDomainFromAddress200Response)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetDomainFromAddress200Response>> GetDomainFromAddressWithHttpInfoAsync (string address, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'address' is set
             if (address == null)
-                throw new ApiException(400, "Missing required parameter 'address' when calling AddressNameAndCategoryInfoApi->GetAddressNameInfoSingle");
-            // verify the required parameter 'chain' is set
-            if (chain == null)
-                throw new ApiException(400, "Missing required parameter 'chain' when calling AddressNameAndCategoryInfoApi->GetAddressNameInfoSingle");
+                throw new ApiException(400, "Missing required parameter 'address' when calling ENSApi->GetDomainFromAddress");
 
-            var localVarPath = "/v1/addressname/simple";
+            var localVarPath = "/v1/ens/domainFromAddress";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -535,7 +494,6 @@ namespace Io.Blockmate.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (address != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "address", address)); // query parameter
-            if (chain != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "chain", chain)); // query parameter
 
             // authentication (UserJWT) required
             // http bearer authentication required
@@ -553,13 +511,13 @@ namespace Io.Blockmate.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetAddressNameInfoSingle", localVarResponse);
+                Exception exception = ExceptionFactory("GetDomainFromAddress", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GetAddressNameInfoSingle200Response>(localVarStatusCode,
+            return new ApiResponse<GetDomainFromAddress200Response>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (GetAddressNameInfoSingle200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAddressNameInfoSingle200Response)));
+                (GetDomainFromAddress200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetDomainFromAddress200Response)));
         }
 
     }
