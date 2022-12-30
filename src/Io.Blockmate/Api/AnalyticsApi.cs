@@ -26,55 +26,179 @@ namespace Io.Blockmate.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get analytics focused on gaming
+        /// Get analytics focused on gaming for specified account and provider
         /// </summary>
         /// <remarks>
-        /// Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+        /// Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
         /// <param name="accountId">Account ID</param>
-        /// <returns>GetAnalytics200Response</returns>
-        GetAnalytics200Response GetAnalytics (string accountProvider, string accountId);
+        /// <returns>Analytics</returns>
+        Analytics GetAccountAnalytics (string accountProvider, string accountId);
 
         /// <summary>
-        /// Get analytics focused on gaming
+        /// Get analytics focused on gaming for specified account and provider
         /// </summary>
         /// <remarks>
-        /// Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+        /// Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
         /// <param name="accountId">Account ID</param>
-        /// <returns>ApiResponse of GetAnalytics200Response</returns>
-        ApiResponse<GetAnalytics200Response> GetAnalyticsWithHttpInfo (string accountProvider, string accountId);
+        /// <returns>ApiResponse of Analytics</returns>
+        ApiResponse<Analytics> GetAccountAnalyticsWithHttpInfo (string accountProvider, string accountId);
+        /// <summary>
+        /// Get analytics focused on gaming for whole project
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Dictionary<string, Analytics></returns>
+        Dictionary<string, Analytics> GetProjectAnalytics ();
+
+        /// <summary>
+        /// Get analytics focused on gaming for whole project
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Dictionary<string, Analytics></returns>
+        ApiResponse<Dictionary<string, Analytics>> GetProjectAnalyticsWithHttpInfo ();
+        /// <summary>
+        /// Get analytics focused on gaming for specified provider
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountProvider">URL value from account_providers method</param>
+        /// <returns>Dictionary<string, Analytics></returns>
+        Dictionary<string, Analytics> GetProviderAnalytics (string accountProvider);
+
+        /// <summary>
+        /// Get analytics focused on gaming for specified provider
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountProvider">URL value from account_providers method</param>
+        /// <returns>ApiResponse of Dictionary<string, Analytics></returns>
+        ApiResponse<Dictionary<string, Analytics>> GetProviderAnalyticsWithHttpInfo (string accountProvider);
+        /// <summary>
+        /// Get analytics focused on gaming for this user
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Dictionary<string, Analytics></returns>
+        Dictionary<string, Analytics> GetUserAnalytics ();
+
+        /// <summary>
+        /// Get analytics focused on gaming for this user
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Dictionary<string, Analytics></returns>
+        ApiResponse<Dictionary<string, Analytics>> GetUserAnalyticsWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get analytics focused on gaming
+        /// Get analytics focused on gaming for specified account and provider
         /// </summary>
         /// <remarks>
-        /// Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+        /// Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
         /// <param name="accountId">Account ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of GetAnalytics200Response</returns>
-        System.Threading.Tasks.Task<GetAnalytics200Response> GetAnalyticsAsync (string accountProvider, string accountId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of Analytics</returns>
+        System.Threading.Tasks.Task<Analytics> GetAccountAnalyticsAsync (string accountProvider, string accountId, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Get analytics focused on gaming
+        /// Get analytics focused on gaming for specified account and provider
         /// </summary>
         /// <remarks>
-        /// Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+        /// Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
         /// <param name="accountId">Account ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (GetAnalytics200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAnalytics200Response>> GetAnalyticsWithHttpInfoAsync (string accountProvider, string accountId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (Analytics)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Analytics>> GetAccountAnalyticsWithHttpInfoAsync (string accountProvider, string accountId, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Get analytics focused on gaming for whole project
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of Dictionary<string, Analytics></returns>
+        System.Threading.Tasks.Task<Dictionary<string, Analytics>> GetProjectAnalyticsAsync (CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Get analytics focused on gaming for whole project
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Analytics&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Analytics>>> GetProjectAnalyticsWithHttpInfoAsync (CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Get analytics focused on gaming for specified provider
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountProvider">URL value from account_providers method</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of Dictionary<string, Analytics></returns>
+        System.Threading.Tasks.Task<Dictionary<string, Analytics>> GetProviderAnalyticsAsync (string accountProvider, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Get analytics focused on gaming for specified provider
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountProvider">URL value from account_providers method</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Analytics&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Analytics>>> GetProviderAnalyticsWithHttpInfoAsync (string accountProvider, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// Get analytics focused on gaming for this user
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of Dictionary<string, Analytics></returns>
+        System.Threading.Tasks.Task<Dictionary<string, Analytics>> GetUserAnalyticsAsync (CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Get analytics focused on gaming for this user
+        /// </summary>
+        /// <remarks>
+        /// Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </remarks>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Analytics&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Analytics>>> GetUserAnalyticsWithHttpInfoAsync (CancellationToken cancellationToken = default(CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -187,33 +311,33 @@ namespace Io.Blockmate.Api
         }
 
         /// <summary>
-        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+        /// Get analytics focused on gaming for specified account and provider Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
         /// <param name="accountId">Account ID</param>
-        /// <returns>GetAnalytics200Response</returns>
-        public GetAnalytics200Response GetAnalytics (string accountProvider, string accountId)
+        /// <returns>Analytics</returns>
+        public Analytics GetAccountAnalytics (string accountProvider, string accountId)
         {
-             ApiResponse<GetAnalytics200Response> localVarResponse = GetAnalyticsWithHttpInfo(accountProvider, accountId);
+             ApiResponse<Analytics> localVarResponse = GetAccountAnalyticsWithHttpInfo(accountProvider, accountId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+        /// Get analytics focused on gaming for specified account and provider Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
         /// <param name="accountId">Account ID</param>
-        /// <returns>ApiResponse of GetAnalytics200Response</returns>
-        public ApiResponse<GetAnalytics200Response> GetAnalyticsWithHttpInfo (string accountProvider, string accountId)
+        /// <returns>ApiResponse of Analytics</returns>
+        public ApiResponse<Analytics> GetAccountAnalyticsWithHttpInfo (string accountProvider, string accountId)
         {
             // verify the required parameter 'accountProvider' is set
             if (accountProvider == null)
-                throw new ApiException(400, "Missing required parameter 'accountProvider' when calling AnalyticsApi->GetAnalytics");
+                throw new ApiException(400, "Missing required parameter 'accountProvider' when calling AnalyticsApi->GetAccountAnalytics");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetAnalytics");
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetAccountAnalytics");
 
             var localVarPath = "/v1/analytics/{account_provider}/account/{account_id}/stats";
             var localVarPathParams = new Dictionary<String, String>();
@@ -255,46 +379,46 @@ namespace Io.Blockmate.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetAnalytics", localVarResponse);
+                Exception exception = ExceptionFactory("GetAccountAnalytics", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GetAnalytics200Response>(localVarStatusCode,
+            return new ApiResponse<Analytics>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (GetAnalytics200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAnalytics200Response)));
+                (Analytics) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Analytics)));
         }
 
         /// <summary>
-        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+        /// Get analytics focused on gaming for specified account and provider Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
         /// <param name="accountId">Account ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of GetAnalytics200Response</returns>
-        public async System.Threading.Tasks.Task<GetAnalytics200Response> GetAnalyticsAsync (string accountProvider, string accountId, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of Analytics</returns>
+        public async System.Threading.Tasks.Task<Analytics> GetAccountAnalyticsAsync (string accountProvider, string accountId, CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<GetAnalytics200Response> localVarResponse = await GetAnalyticsWithHttpInfoAsync(accountProvider, accountId, cancellationToken);
+             ApiResponse<Analytics> localVarResponse = await GetAccountAnalyticsWithHttpInfoAsync(accountProvider, accountId, cancellationToken);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
+        /// Get analytics focused on gaming for specified account and provider Get analytics focused on gaming for specified account and provider. All empty values are omitted from the response. Values are recalculated once per day.
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
         /// <param name="accountId">Account ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (GetAnalytics200Response)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetAnalytics200Response>> GetAnalyticsWithHttpInfoAsync (string accountProvider, string accountId, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (Analytics)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Analytics>> GetAccountAnalyticsWithHttpInfoAsync (string accountProvider, string accountId, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'accountProvider' is set
             if (accountProvider == null)
-                throw new ApiException(400, "Missing required parameter 'accountProvider' when calling AnalyticsApi->GetAnalytics");
+                throw new ApiException(400, "Missing required parameter 'accountProvider' when calling AnalyticsApi->GetAccountAnalytics");
             // verify the required parameter 'accountId' is set
             if (accountId == null)
-                throw new ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetAnalytics");
+                throw new ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetAccountAnalytics");
 
             var localVarPath = "/v1/analytics/{account_provider}/account/{account_id}/stats";
             var localVarPathParams = new Dictionary<String, String>();
@@ -336,13 +460,430 @@ namespace Io.Blockmate.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetAnalytics", localVarResponse);
+                Exception exception = ExceptionFactory("GetAccountAnalytics", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GetAnalytics200Response>(localVarStatusCode,
+            return new ApiResponse<Analytics>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (GetAnalytics200Response) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAnalytics200Response)));
+                (Analytics) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Analytics)));
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for whole project Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Dictionary<string, Analytics></returns>
+        public Dictionary<string, Analytics> GetProjectAnalytics ()
+        {
+             ApiResponse<Dictionary<string, Analytics>> localVarResponse = GetProjectAnalyticsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for whole project Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Dictionary<string, Analytics></returns>
+        public ApiResponse<Dictionary<string, Analytics>> GetProjectAnalyticsWithHttpInfo ()
+        {
+
+            var localVarPath = "/v1/analytics/project/stats";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (UserJWT) required
+            // http bearer authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetProjectAnalytics", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, Analytics>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Dictionary<string, Analytics>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Analytics>)));
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for whole project Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of Dictionary<string, Analytics></returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Analytics>> GetProjectAnalyticsAsync (CancellationToken cancellationToken = default(CancellationToken))
+        {
+             ApiResponse<Dictionary<string, Analytics>> localVarResponse = await GetProjectAnalyticsWithHttpInfoAsync(cancellationToken);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for whole project Get analytics focused on gaming for whole project. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Analytics&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Analytics>>> GetProjectAnalyticsWithHttpInfoAsync (CancellationToken cancellationToken = default(CancellationToken))
+        {
+
+            var localVarPath = "/v1/analytics/project/stats";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (UserJWT) required
+            // http bearer authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType, cancellationToken);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetProjectAnalytics", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, Analytics>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Dictionary<string, Analytics>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Analytics>)));
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for specified provider Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountProvider">URL value from account_providers method</param>
+        /// <returns>Dictionary<string, Analytics></returns>
+        public Dictionary<string, Analytics> GetProviderAnalytics (string accountProvider)
+        {
+             ApiResponse<Dictionary<string, Analytics>> localVarResponse = GetProviderAnalyticsWithHttpInfo(accountProvider);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for specified provider Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountProvider">URL value from account_providers method</param>
+        /// <returns>ApiResponse of Dictionary<string, Analytics></returns>
+        public ApiResponse<Dictionary<string, Analytics>> GetProviderAnalyticsWithHttpInfo (string accountProvider)
+        {
+            // verify the required parameter 'accountProvider' is set
+            if (accountProvider == null)
+                throw new ApiException(400, "Missing required parameter 'accountProvider' when calling AnalyticsApi->GetProviderAnalytics");
+
+            var localVarPath = "/v1/analytics/{account_provider}/stats";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (accountProvider != null) localVarPathParams.Add("account_provider", this.Configuration.ApiClient.ParameterToString(accountProvider)); // path parameter
+
+            // authentication (UserJWT) required
+            // http bearer authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetProviderAnalytics", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, Analytics>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Dictionary<string, Analytics>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Analytics>)));
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for specified provider Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountProvider">URL value from account_providers method</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of Dictionary<string, Analytics></returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Analytics>> GetProviderAnalyticsAsync (string accountProvider, CancellationToken cancellationToken = default(CancellationToken))
+        {
+             ApiResponse<Dictionary<string, Analytics>> localVarResponse = await GetProviderAnalyticsWithHttpInfoAsync(accountProvider, cancellationToken);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for specified provider Get analytics focused on gaming for specified provider. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountProvider">URL value from account_providers method</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Analytics&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Analytics>>> GetProviderAnalyticsWithHttpInfoAsync (string accountProvider, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            // verify the required parameter 'accountProvider' is set
+            if (accountProvider == null)
+                throw new ApiException(400, "Missing required parameter 'accountProvider' when calling AnalyticsApi->GetProviderAnalytics");
+
+            var localVarPath = "/v1/analytics/{account_provider}/stats";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (accountProvider != null) localVarPathParams.Add("account_provider", this.Configuration.ApiClient.ParameterToString(accountProvider)); // path parameter
+
+            // authentication (UserJWT) required
+            // http bearer authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType, cancellationToken);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetProviderAnalytics", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, Analytics>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Dictionary<string, Analytics>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Analytics>)));
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for this user Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Dictionary<string, Analytics></returns>
+        public Dictionary<string, Analytics> GetUserAnalytics ()
+        {
+             ApiResponse<Dictionary<string, Analytics>> localVarResponse = GetUserAnalyticsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for this user Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Dictionary<string, Analytics></returns>
+        public ApiResponse<Dictionary<string, Analytics>> GetUserAnalyticsWithHttpInfo ()
+        {
+
+            var localVarPath = "/v1/analytics/user/stats";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (UserJWT) required
+            // http bearer authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserAnalytics", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, Analytics>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Dictionary<string, Analytics>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Analytics>)));
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for this user Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of Dictionary<string, Analytics></returns>
+        public async System.Threading.Tasks.Task<Dictionary<string, Analytics>> GetUserAnalyticsAsync (CancellationToken cancellationToken = default(CancellationToken))
+        {
+             ApiResponse<Dictionary<string, Analytics>> localVarResponse = await GetUserAnalyticsWithHttpInfoAsync(cancellationToken);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get analytics focused on gaming for this user Get analytics focused on gaming for this user. All empty values are omitted from the response. Values are recalculated once per day.
+        /// </summary>
+        /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
+        /// <returns>Task of ApiResponse (Dictionary&lt;string, Analytics&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Analytics>>> GetUserAnalyticsWithHttpInfoAsync (CancellationToken cancellationToken = default(CancellationToken))
+        {
+
+            var localVarPath = "/v1/analytics/user/stats";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (UserJWT) required
+            // http bearer authentication required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType, cancellationToken);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserAnalytics", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Dictionary<string, Analytics>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (Dictionary<string, Analytics>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Analytics>)));
         }
 
     }

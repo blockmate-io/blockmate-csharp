@@ -32,6 +32,8 @@ src/Io.Blockmate/Model/AccountProviderHintFields.cs
 src/Io.Blockmate/Model/AddressRiskReport.cs
 src/Io.Blockmate/Model/AddressRiskReportDetails.cs
 src/Io.Blockmate/Model/Amount.cs
+src/Io.Blockmate/Model/Analytics.cs
+src/Io.Blockmate/Model/Analytics1.cs
 src/Io.Blockmate/Model/AuthUser200Response.cs
 src/Io.Blockmate/Model/Balance200Response.cs
 src/Io.Blockmate/Model/BalanceResponse.cs
@@ -53,8 +55,6 @@ src/Io.Blockmate/Model/GetAccountHint404Response.cs
 src/Io.Blockmate/Model/GetAddressFromDomain200Response.cs
 src/Io.Blockmate/Model/GetAddressNameInfoSingle200Response.cs
 src/Io.Blockmate/Model/GetAddressRiskScore200Response.cs
-src/Io.Blockmate/Model/GetAnalytics200Response.cs
-src/Io.Blockmate/Model/GetAnalytics200ResponseValue.cs
 src/Io.Blockmate/Model/GetDomainFromAddress200Response.cs
 src/Io.Blockmate/Model/GetDomainFromAddress200ResponseMetadata.cs
 src/Io.Blockmate/Model/GetDomainFromAddress200ResponseMetadataAttributesInner.cs
