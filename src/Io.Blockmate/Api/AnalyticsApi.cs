@@ -29,7 +29,7 @@ namespace Io.Blockmate.Api
         /// Get analytics focused on gaming
         /// </summary>
         /// <remarks>
-        /// Get analytics focused on gaming. All empty values are omitted from the response.
+        /// Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
@@ -41,7 +41,7 @@ namespace Io.Blockmate.Api
         /// Get analytics focused on gaming
         /// </summary>
         /// <remarks>
-        /// Get analytics focused on gaming. All empty values are omitted from the response.
+        /// Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
@@ -54,7 +54,7 @@ namespace Io.Blockmate.Api
         /// Get analytics focused on gaming
         /// </summary>
         /// <remarks>
-        /// Get analytics focused on gaming. All empty values are omitted from the response.
+        /// Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
@@ -67,7 +67,7 @@ namespace Io.Blockmate.Api
         /// Get analytics focused on gaming
         /// </summary>
         /// <remarks>
-        /// Get analytics focused on gaming. All empty values are omitted from the response.
+        /// Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
         /// </remarks>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
@@ -187,7 +187,7 @@ namespace Io.Blockmate.Api
         }
 
         /// <summary>
-        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response.
+        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
@@ -200,7 +200,7 @@ namespace Io.Blockmate.Api
         }
 
         /// <summary>
-        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response.
+        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
@@ -265,7 +265,7 @@ namespace Io.Blockmate.Api
         }
 
         /// <summary>
-        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response.
+        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
@@ -280,7 +280,7 @@ namespace Io.Blockmate.Api
         }
 
         /// <summary>
-        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response.
+        /// Get analytics focused on gaming Get analytics focused on gaming. All empty values are omitted from the response. Values are recalculated once per day.
         /// </summary>
         /// <exception cref="Io.Blockmate.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountProvider">URL value from account_providers method</param>
