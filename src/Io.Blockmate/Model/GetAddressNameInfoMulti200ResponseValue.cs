@@ -25,56 +25,33 @@ using OpenAPIDateConverter = Io.Blockmate.Client.OpenAPIDateConverter;
 namespace Io.Blockmate.Model
 {
     /// <summary>
-    /// ConnectAccountRequest
+    /// GetAddressNameInfoMulti200ResponseValue
     /// </summary>
     [DataContract]
-    public partial class ConnectAccountRequest :  IEquatable<ConnectAccountRequest>, IValidatableObject
+    public partial class GetAddressNameInfoMulti200ResponseValue :  IEquatable<GetAddressNameInfoMulti200ResponseValue>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectAccountRequest" /> class.
+        /// Initializes a new instance of the <see cref="GetAddressNameInfoMulti200ResponseValue" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ConnectAccountRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectAccountRequest" /> class.
-        /// </summary>
-        /// <param name="wallet">wallet (required).</param>
-        /// <param name="description">description (required).</param>
-        public ConnectAccountRequest(string wallet = default(string), string description = default(string))
+        /// <param name="name">name.</param>
+        /// <param name="category">category.</param>
+        public GetAddressNameInfoMulti200ResponseValue(string name = default(string), string category = default(string))
         {
-            // to ensure "wallet" is required (not null)
-            if (wallet == null)
-            {
-                throw new InvalidDataException("wallet is a required property for ConnectAccountRequest and cannot be null");
-            }
-            else
-            {
-                this.Wallet = wallet;
-            }
-
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new InvalidDataException("description is a required property for ConnectAccountRequest and cannot be null");
-            }
-            else
-            {
-                this.Description = description;
-            }
-
+            this.Name = name;
+            this.Category = category;
         }
 
         /// <summary>
-        /// Gets or Sets Wallet
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="wallet", EmitDefaultValue=true)]
-        public string Wallet { get; set; }
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or Sets Category
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=true)]
-        public string Description { get; set; }
+        [DataMember(Name="category", EmitDefaultValue=false)]
+        public string Category { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,9 +60,9 @@ namespace Io.Blockmate.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConnectAccountRequest {\n");
-            sb.Append("  Wallet: ").Append(Wallet).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("class GetAddressNameInfoMulti200ResponseValue {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,29 +83,29 @@ namespace Io.Blockmate.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ConnectAccountRequest);
+            return this.Equals(input as GetAddressNameInfoMulti200ResponseValue);
         }
 
         /// <summary>
-        /// Returns true if ConnectAccountRequest instances are equal
+        /// Returns true if GetAddressNameInfoMulti200ResponseValue instances are equal
         /// </summary>
-        /// <param name="input">Instance of ConnectAccountRequest to be compared</param>
+        /// <param name="input">Instance of GetAddressNameInfoMulti200ResponseValue to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ConnectAccountRequest input)
+        public bool Equals(GetAddressNameInfoMulti200ResponseValue input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Wallet == input.Wallet ||
-                    (this.Wallet != null &&
-                    this.Wallet.Equals(input.Wallet))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.Category == input.Category ||
+                    (this.Category != null &&
+                    this.Category.Equals(input.Category))
                 );
         }
 
@@ -141,10 +118,10 @@ namespace Io.Blockmate.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Wallet != null)
-                    hashCode = hashCode * 59 + this.Wallet.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Category != null)
+                    hashCode = hashCode * 59 + this.Category.GetHashCode();
                 return hashCode;
             }
         }

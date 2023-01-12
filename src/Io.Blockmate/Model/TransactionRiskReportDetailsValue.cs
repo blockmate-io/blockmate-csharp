@@ -25,56 +25,33 @@ using OpenAPIDateConverter = Io.Blockmate.Client.OpenAPIDateConverter;
 namespace Io.Blockmate.Model
 {
     /// <summary>
-    /// ConnectAccountRequest
+    /// TransactionRiskReportDetailsValue
     /// </summary>
     [DataContract]
-    public partial class ConnectAccountRequest :  IEquatable<ConnectAccountRequest>, IValidatableObject
+    public partial class TransactionRiskReportDetailsValue :  IEquatable<TransactionRiskReportDetailsValue>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectAccountRequest" /> class.
+        /// Initializes a new instance of the <see cref="TransactionRiskReportDetailsValue" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ConnectAccountRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConnectAccountRequest" /> class.
-        /// </summary>
-        /// <param name="wallet">wallet (required).</param>
-        /// <param name="description">description (required).</param>
-        public ConnectAccountRequest(string wallet = default(string), string description = default(string))
+        /// <param name="ownCategories">ownCategories.</param>
+        /// <param name="sourceOfFundsCategories">sourceOfFundsCategories.</param>
+        public TransactionRiskReportDetailsValue(List<RiskReportCategory> ownCategories = default(List<RiskReportCategory>), List<RiskReportCategory> sourceOfFundsCategories = default(List<RiskReportCategory>))
         {
-            // to ensure "wallet" is required (not null)
-            if (wallet == null)
-            {
-                throw new InvalidDataException("wallet is a required property for ConnectAccountRequest and cannot be null");
-            }
-            else
-            {
-                this.Wallet = wallet;
-            }
-
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new InvalidDataException("description is a required property for ConnectAccountRequest and cannot be null");
-            }
-            else
-            {
-                this.Description = description;
-            }
-
+            this.OwnCategories = ownCategories;
+            this.SourceOfFundsCategories = sourceOfFundsCategories;
         }
 
         /// <summary>
-        /// Gets or Sets Wallet
+        /// Gets or Sets OwnCategories
         /// </summary>
-        [DataMember(Name="wallet", EmitDefaultValue=true)]
-        public string Wallet { get; set; }
+        [DataMember(Name="own_categories", EmitDefaultValue=false)]
+        public List<RiskReportCategory> OwnCategories { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or Sets SourceOfFundsCategories
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=true)]
-        public string Description { get; set; }
+        [DataMember(Name="source_of_funds_categories", EmitDefaultValue=false)]
+        public List<RiskReportCategory> SourceOfFundsCategories { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,9 +60,9 @@ namespace Io.Blockmate.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConnectAccountRequest {\n");
-            sb.Append("  Wallet: ").Append(Wallet).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("class TransactionRiskReportDetailsValue {\n");
+            sb.Append("  OwnCategories: ").Append(OwnCategories).Append("\n");
+            sb.Append("  SourceOfFundsCategories: ").Append(SourceOfFundsCategories).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,29 +83,31 @@ namespace Io.Blockmate.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ConnectAccountRequest);
+            return this.Equals(input as TransactionRiskReportDetailsValue);
         }
 
         /// <summary>
-        /// Returns true if ConnectAccountRequest instances are equal
+        /// Returns true if TransactionRiskReportDetailsValue instances are equal
         /// </summary>
-        /// <param name="input">Instance of ConnectAccountRequest to be compared</param>
+        /// <param name="input">Instance of TransactionRiskReportDetailsValue to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ConnectAccountRequest input)
+        public bool Equals(TransactionRiskReportDetailsValue input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Wallet == input.Wallet ||
-                    (this.Wallet != null &&
-                    this.Wallet.Equals(input.Wallet))
+                    this.OwnCategories == input.OwnCategories ||
+                    this.OwnCategories != null &&
+                    input.OwnCategories != null &&
+                    this.OwnCategories.SequenceEqual(input.OwnCategories)
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.SourceOfFundsCategories == input.SourceOfFundsCategories ||
+                    this.SourceOfFundsCategories != null &&
+                    input.SourceOfFundsCategories != null &&
+                    this.SourceOfFundsCategories.SequenceEqual(input.SourceOfFundsCategories)
                 );
         }
 
@@ -141,10 +120,10 @@ namespace Io.Blockmate.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Wallet != null)
-                    hashCode = hashCode * 59 + this.Wallet.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.OwnCategories != null)
+                    hashCode = hashCode * 59 + this.OwnCategories.GetHashCode();
+                if (this.SourceOfFundsCategories != null)
+                    hashCode = hashCode * 59 + this.SourceOfFundsCategories.GetHashCode();
                 return hashCode;
             }
         }
