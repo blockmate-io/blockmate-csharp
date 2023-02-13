@@ -93,31 +93,31 @@ namespace Io.Blockmate.Model
         /// <param name="countTxsOut7Nft">OUT NFT transactions count during last week.</param>
         /// <param name="countTxsOut7Gaming">OUT gaming transactions count during last week.</param>
         /// <param name="countTxsOut7Gambling">OUT gambling transactions count during last week.</param>
-        /// <param name="firstTxsAllOnchain">Time when first transaction occurred.</param>
-        /// <param name="firstTxsAllNft">Time when first NFT transaction occurred.</param>
-        /// <param name="firstTxsAllGaming">Time when first gaming transaction occurred.</param>
-        /// <param name="firstTxsAllGambling">Time when first gambling transaction occurred.</param>
-        /// <param name="firstTxsInOnchain">Time when first IN transaction occurred.</param>
-        /// <param name="firstTxsInNft">Time when first IN NFT transaction occurred.</param>
-        /// <param name="firstTxsInGaming">Time when first IN gaming transaction occurred.</param>
-        /// <param name="firstTxsInGambling">Time when first IN gambling transaction occurred.</param>
-        /// <param name="firstTxsOutOnchain">Time when first OUT transaction occurred.</param>
-        /// <param name="firstTxsOutNft">Time when first OUT NFT transaction occurred.</param>
-        /// <param name="firstTxsOutGaming">Time when first OUT gaming transaction occurred.</param>
-        /// <param name="firstTxsOutGambling">Time when first OUT gambling transaction occurred.</param>
-        /// <param name="lastTxsAllOnchain">Time when last transaction occurred.</param>
-        /// <param name="lastTxsAllNft">Time when last NFT transaction occurred.</param>
-        /// <param name="lastTxsAllGaming">Time when last gaming transaction occurred.</param>
-        /// <param name="lastTxsAllGambling">Time when last gambling transaction occurred.</param>
-        /// <param name="lastTxsInOnchain">Time when last IN transaction occurred.</param>
-        /// <param name="lastTxsInNft">Time when last IN NFT transaction occurred.</param>
-        /// <param name="lastTxsInGaming">Time when last IN gaming transaction occurred.</param>
-        /// <param name="lastTxsInGambling">Time when last IN gambling transaction occurred.</param>
-        /// <param name="lastTxsOutOnchain">Time when last OUT transaction occurred.</param>
-        /// <param name="lastTxsOutNft">Time when last OUT NFT transaction occurred.</param>
-        /// <param name="lastTxsOutGaming">Time when last OUT gaming transaction occurred.</param>
-        /// <param name="lastTxsOutGambling">Time when last OUT gambling transaction occurred.</param>
-        public Analytics(int countTxsAllForeverOnchain = default(int), int countTxsAllForeverNft = default(int), int countTxsAllForeverGaming = default(int), int countTxsAllForeverGambling = default(int), int countTxsAll365Onchain = default(int), int countTxsAll365Nft = default(int), int countTxsAll365Gaming = default(int), int countTxsAll365Gambling = default(int), int countTxsAll3160Onchain = default(int), int countTxsAll3160Nft = default(int), int countTxsAll3160Gaming = default(int), int countTxsAll3160Gambling = default(int), int countTxsAll30Onchain = default(int), int countTxsAll30Nft = default(int), int countTxsAll30Gaming = default(int), int countTxsAll30Gambling = default(int), int countTxsAll7Onchain = default(int), int countTxsAll7Nft = default(int), int countTxsAll7Gaming = default(int), int countTxsAll7Gambling = default(int), int countTxsInForeverOnchain = default(int), int countTxsInForeverNft = default(int), int countTxsInForeverGaming = default(int), int countTxsInForeverGambling = default(int), int countTxsIn365Onchain = default(int), int countTxsIn365Nft = default(int), int countTxsIn365Gaming = default(int), int countTxsIn365Gambling = default(int), int countTxsIn3160Onchain = default(int), int countTxsIn3160Nft = default(int), int countTxsIn3160Gaming = default(int), int countTxsIn3160Gambling = default(int), int countTxsIn30Onchain = default(int), int countTxsIn30Nft = default(int), int countTxsIn30Gaming = default(int), int countTxsIn30Gambling = default(int), int countTxsIn7Onchain = default(int), int countTxsIn7Nft = default(int), int countTxsIn7Gaming = default(int), int countTxsIn7Gambling = default(int), int countTxsOutForeverOnchain = default(int), int countTxsOutForeverNft = default(int), int countTxsOutForeverGaming = default(int), int countTxsOutForeverGambling = default(int), int countTxsOut365Onchain = default(int), int countTxsOut365Nft = default(int), int countTxsOut365Gaming = default(int), int countTxsOut365Gambling = default(int), int countTxsOut3160Onchain = default(int), int countTxsOut3160Nft = default(int), int countTxsOut3160Gaming = default(int), int countTxsOut3160Gambling = default(int), int countTxsOut30Onchain = default(int), int countTxsOut30Nft = default(int), int countTxsOut30Gaming = default(int), int countTxsOut30Gambling = default(int), int countTxsOut7Onchain = default(int), int countTxsOut7Nft = default(int), int countTxsOut7Gaming = default(int), int countTxsOut7Gambling = default(int), string firstTxsAllOnchain = default(string), string firstTxsAllNft = default(string), string firstTxsAllGaming = default(string), string firstTxsAllGambling = default(string), string firstTxsInOnchain = default(string), string firstTxsInNft = default(string), string firstTxsInGaming = default(string), string firstTxsInGambling = default(string), string firstTxsOutOnchain = default(string), string firstTxsOutNft = default(string), string firstTxsOutGaming = default(string), string firstTxsOutGambling = default(string), string lastTxsAllOnchain = default(string), string lastTxsAllNft = default(string), string lastTxsAllGaming = default(string), string lastTxsAllGambling = default(string), string lastTxsInOnchain = default(string), string lastTxsInNft = default(string), string lastTxsInGaming = default(string), string lastTxsInGambling = default(string), string lastTxsOutOnchain = default(string), string lastTxsOutNft = default(string), string lastTxsOutGaming = default(string), string lastTxsOutGambling = default(string)) : base()
+        /// <param name="firstTxsAllOnchain">Unix timestamp when first transaction occurred.</param>
+        /// <param name="firstTxsAllNft">Unix timestamp when first NFT transaction occurred.</param>
+        /// <param name="firstTxsAllGaming">Unix timestamp when first gaming transaction occurred.</param>
+        /// <param name="firstTxsAllGambling">Unix timestamp when first gambling transaction occurred.</param>
+        /// <param name="firstTxsInOnchain">Unix timestamp when first IN transaction occurred.</param>
+        /// <param name="firstTxsInNft">Unix timestamp when first IN NFT transaction occurred.</param>
+        /// <param name="firstTxsInGaming">Unix timestamp when first IN gaming transaction occurred.</param>
+        /// <param name="firstTxsInGambling">Unix timestamp when first IN gambling transaction occurred.</param>
+        /// <param name="firstTxsOutOnchain">Unix timestamp when first OUT transaction occurred.</param>
+        /// <param name="firstTxsOutNft">Unix timestamp when first OUT NFT transaction occurred.</param>
+        /// <param name="firstTxsOutGaming">Unix timestamp when first OUT gaming transaction occurred.</param>
+        /// <param name="firstTxsOutGambling">Unix timestamp when first OUT gambling transaction occurred.</param>
+        /// <param name="lastTxsAllOnchain">Unix timestamp when last transaction occurred.</param>
+        /// <param name="lastTxsAllNft">Unix timestamp when last NFT transaction occurred.</param>
+        /// <param name="lastTxsAllGaming">Unix timestamp when last gaming transaction occurred.</param>
+        /// <param name="lastTxsAllGambling">Unix timestamp when last gambling transaction occurred.</param>
+        /// <param name="lastTxsInOnchain">Unix timestamp when last IN transaction occurred.</param>
+        /// <param name="lastTxsInNft">Unix timestamp when last IN NFT transaction occurred.</param>
+        /// <param name="lastTxsInGaming">Unix timestamp when last IN gaming transaction occurred.</param>
+        /// <param name="lastTxsInGambling">Unix timestamp when last IN gambling transaction occurred.</param>
+        /// <param name="lastTxsOutOnchain">Unix timestamp when last OUT transaction occurred.</param>
+        /// <param name="lastTxsOutNft">Unix timestamp when last OUT NFT transaction occurred.</param>
+        /// <param name="lastTxsOutGaming">Unix timestamp when last OUT gaming transaction occurred.</param>
+        /// <param name="lastTxsOutGambling">Unix timestamp when last OUT gambling transaction occurred.</param>
+        public Analytics(int countTxsAllForeverOnchain = default(int), int countTxsAllForeverNft = default(int), int countTxsAllForeverGaming = default(int), int countTxsAllForeverGambling = default(int), int countTxsAll365Onchain = default(int), int countTxsAll365Nft = default(int), int countTxsAll365Gaming = default(int), int countTxsAll365Gambling = default(int), int countTxsAll3160Onchain = default(int), int countTxsAll3160Nft = default(int), int countTxsAll3160Gaming = default(int), int countTxsAll3160Gambling = default(int), int countTxsAll30Onchain = default(int), int countTxsAll30Nft = default(int), int countTxsAll30Gaming = default(int), int countTxsAll30Gambling = default(int), int countTxsAll7Onchain = default(int), int countTxsAll7Nft = default(int), int countTxsAll7Gaming = default(int), int countTxsAll7Gambling = default(int), int countTxsInForeverOnchain = default(int), int countTxsInForeverNft = default(int), int countTxsInForeverGaming = default(int), int countTxsInForeverGambling = default(int), int countTxsIn365Onchain = default(int), int countTxsIn365Nft = default(int), int countTxsIn365Gaming = default(int), int countTxsIn365Gambling = default(int), int countTxsIn3160Onchain = default(int), int countTxsIn3160Nft = default(int), int countTxsIn3160Gaming = default(int), int countTxsIn3160Gambling = default(int), int countTxsIn30Onchain = default(int), int countTxsIn30Nft = default(int), int countTxsIn30Gaming = default(int), int countTxsIn30Gambling = default(int), int countTxsIn7Onchain = default(int), int countTxsIn7Nft = default(int), int countTxsIn7Gaming = default(int), int countTxsIn7Gambling = default(int), int countTxsOutForeverOnchain = default(int), int countTxsOutForeverNft = default(int), int countTxsOutForeverGaming = default(int), int countTxsOutForeverGambling = default(int), int countTxsOut365Onchain = default(int), int countTxsOut365Nft = default(int), int countTxsOut365Gaming = default(int), int countTxsOut365Gambling = default(int), int countTxsOut3160Onchain = default(int), int countTxsOut3160Nft = default(int), int countTxsOut3160Gaming = default(int), int countTxsOut3160Gambling = default(int), int countTxsOut30Onchain = default(int), int countTxsOut30Nft = default(int), int countTxsOut30Gaming = default(int), int countTxsOut30Gambling = default(int), int countTxsOut7Onchain = default(int), int countTxsOut7Nft = default(int), int countTxsOut7Gaming = default(int), int countTxsOut7Gambling = default(int), int firstTxsAllOnchain = default(int), int firstTxsAllNft = default(int), int firstTxsAllGaming = default(int), int firstTxsAllGambling = default(int), int firstTxsInOnchain = default(int), int firstTxsInNft = default(int), int firstTxsInGaming = default(int), int firstTxsInGambling = default(int), int firstTxsOutOnchain = default(int), int firstTxsOutNft = default(int), int firstTxsOutGaming = default(int), int firstTxsOutGambling = default(int), int lastTxsAllOnchain = default(int), int lastTxsAllNft = default(int), int lastTxsAllGaming = default(int), int lastTxsAllGambling = default(int), int lastTxsInOnchain = default(int), int lastTxsInNft = default(int), int lastTxsInGaming = default(int), int lastTxsInGambling = default(int), int lastTxsOutOnchain = default(int), int lastTxsOutNft = default(int), int lastTxsOutGaming = default(int), int lastTxsOutGambling = default(int)) : base()
         {
             this.CountTxsAllForeverOnchain = countTxsAllForeverOnchain;
             this.CountTxsAllForeverNft = countTxsAllForeverNft;
@@ -626,172 +626,172 @@ namespace Io.Blockmate.Model
         public int CountTxsOut7Gambling { get; set; }
 
         /// <summary>
-        /// Time when first transaction occurred
+        /// Unix timestamp when first transaction occurred
         /// </summary>
-        /// <value>Time when first transaction occurred</value>
+        /// <value>Unix timestamp when first transaction occurred</value>
         [DataMember(Name="first_txs_all_onchain", EmitDefaultValue=false)]
-        public string FirstTxsAllOnchain { get; set; }
+        public int FirstTxsAllOnchain { get; set; }
 
         /// <summary>
-        /// Time when first NFT transaction occurred
+        /// Unix timestamp when first NFT transaction occurred
         /// </summary>
-        /// <value>Time when first NFT transaction occurred</value>
+        /// <value>Unix timestamp when first NFT transaction occurred</value>
         [DataMember(Name="first_txs_all_nft", EmitDefaultValue=false)]
-        public string FirstTxsAllNft { get; set; }
+        public int FirstTxsAllNft { get; set; }
 
         /// <summary>
-        /// Time when first gaming transaction occurred
+        /// Unix timestamp when first gaming transaction occurred
         /// </summary>
-        /// <value>Time when first gaming transaction occurred</value>
+        /// <value>Unix timestamp when first gaming transaction occurred</value>
         [DataMember(Name="first_txs_all_gaming", EmitDefaultValue=false)]
-        public string FirstTxsAllGaming { get; set; }
+        public int FirstTxsAllGaming { get; set; }
 
         /// <summary>
-        /// Time when first gambling transaction occurred
+        /// Unix timestamp when first gambling transaction occurred
         /// </summary>
-        /// <value>Time when first gambling transaction occurred</value>
+        /// <value>Unix timestamp when first gambling transaction occurred</value>
         [DataMember(Name="first_txs_all_gambling", EmitDefaultValue=false)]
-        public string FirstTxsAllGambling { get; set; }
+        public int FirstTxsAllGambling { get; set; }
 
         /// <summary>
-        /// Time when first IN transaction occurred
+        /// Unix timestamp when first IN transaction occurred
         /// </summary>
-        /// <value>Time when first IN transaction occurred</value>
+        /// <value>Unix timestamp when first IN transaction occurred</value>
         [DataMember(Name="first_txs_in_onchain", EmitDefaultValue=false)]
-        public string FirstTxsInOnchain { get; set; }
+        public int FirstTxsInOnchain { get; set; }
 
         /// <summary>
-        /// Time when first IN NFT transaction occurred
+        /// Unix timestamp when first IN NFT transaction occurred
         /// </summary>
-        /// <value>Time when first IN NFT transaction occurred</value>
+        /// <value>Unix timestamp when first IN NFT transaction occurred</value>
         [DataMember(Name="first_txs_in_nft", EmitDefaultValue=false)]
-        public string FirstTxsInNft { get; set; }
+        public int FirstTxsInNft { get; set; }
 
         /// <summary>
-        /// Time when first IN gaming transaction occurred
+        /// Unix timestamp when first IN gaming transaction occurred
         /// </summary>
-        /// <value>Time when first IN gaming transaction occurred</value>
+        /// <value>Unix timestamp when first IN gaming transaction occurred</value>
         [DataMember(Name="first_txs_in_gaming", EmitDefaultValue=false)]
-        public string FirstTxsInGaming { get; set; }
+        public int FirstTxsInGaming { get; set; }
 
         /// <summary>
-        /// Time when first IN gambling transaction occurred
+        /// Unix timestamp when first IN gambling transaction occurred
         /// </summary>
-        /// <value>Time when first IN gambling transaction occurred</value>
+        /// <value>Unix timestamp when first IN gambling transaction occurred</value>
         [DataMember(Name="first_txs_in_gambling", EmitDefaultValue=false)]
-        public string FirstTxsInGambling { get; set; }
+        public int FirstTxsInGambling { get; set; }
 
         /// <summary>
-        /// Time when first OUT transaction occurred
+        /// Unix timestamp when first OUT transaction occurred
         /// </summary>
-        /// <value>Time when first OUT transaction occurred</value>
+        /// <value>Unix timestamp when first OUT transaction occurred</value>
         [DataMember(Name="first_txs_out_onchain", EmitDefaultValue=false)]
-        public string FirstTxsOutOnchain { get; set; }
+        public int FirstTxsOutOnchain { get; set; }
 
         /// <summary>
-        /// Time when first OUT NFT transaction occurred
+        /// Unix timestamp when first OUT NFT transaction occurred
         /// </summary>
-        /// <value>Time when first OUT NFT transaction occurred</value>
+        /// <value>Unix timestamp when first OUT NFT transaction occurred</value>
         [DataMember(Name="first_txs_out_nft", EmitDefaultValue=false)]
-        public string FirstTxsOutNft { get; set; }
+        public int FirstTxsOutNft { get; set; }
 
         /// <summary>
-        /// Time when first OUT gaming transaction occurred
+        /// Unix timestamp when first OUT gaming transaction occurred
         /// </summary>
-        /// <value>Time when first OUT gaming transaction occurred</value>
+        /// <value>Unix timestamp when first OUT gaming transaction occurred</value>
         [DataMember(Name="first_txs_out_gaming", EmitDefaultValue=false)]
-        public string FirstTxsOutGaming { get; set; }
+        public int FirstTxsOutGaming { get; set; }
 
         /// <summary>
-        /// Time when first OUT gambling transaction occurred
+        /// Unix timestamp when first OUT gambling transaction occurred
         /// </summary>
-        /// <value>Time when first OUT gambling transaction occurred</value>
+        /// <value>Unix timestamp when first OUT gambling transaction occurred</value>
         [DataMember(Name="first_txs_out_gambling", EmitDefaultValue=false)]
-        public string FirstTxsOutGambling { get; set; }
+        public int FirstTxsOutGambling { get; set; }
 
         /// <summary>
-        /// Time when last transaction occurred
+        /// Unix timestamp when last transaction occurred
         /// </summary>
-        /// <value>Time when last transaction occurred</value>
+        /// <value>Unix timestamp when last transaction occurred</value>
         [DataMember(Name="last_txs_all_onchain", EmitDefaultValue=false)]
-        public string LastTxsAllOnchain { get; set; }
+        public int LastTxsAllOnchain { get; set; }
 
         /// <summary>
-        /// Time when last NFT transaction occurred
+        /// Unix timestamp when last NFT transaction occurred
         /// </summary>
-        /// <value>Time when last NFT transaction occurred</value>
+        /// <value>Unix timestamp when last NFT transaction occurred</value>
         [DataMember(Name="last_txs_all_nft", EmitDefaultValue=false)]
-        public string LastTxsAllNft { get; set; }
+        public int LastTxsAllNft { get; set; }
 
         /// <summary>
-        /// Time when last gaming transaction occurred
+        /// Unix timestamp when last gaming transaction occurred
         /// </summary>
-        /// <value>Time when last gaming transaction occurred</value>
+        /// <value>Unix timestamp when last gaming transaction occurred</value>
         [DataMember(Name="last_txs_all_gaming", EmitDefaultValue=false)]
-        public string LastTxsAllGaming { get; set; }
+        public int LastTxsAllGaming { get; set; }
 
         /// <summary>
-        /// Time when last gambling transaction occurred
+        /// Unix timestamp when last gambling transaction occurred
         /// </summary>
-        /// <value>Time when last gambling transaction occurred</value>
+        /// <value>Unix timestamp when last gambling transaction occurred</value>
         [DataMember(Name="last_txs_all_gambling", EmitDefaultValue=false)]
-        public string LastTxsAllGambling { get; set; }
+        public int LastTxsAllGambling { get; set; }
 
         /// <summary>
-        /// Time when last IN transaction occurred
+        /// Unix timestamp when last IN transaction occurred
         /// </summary>
-        /// <value>Time when last IN transaction occurred</value>
+        /// <value>Unix timestamp when last IN transaction occurred</value>
         [DataMember(Name="last_txs_in_onchain", EmitDefaultValue=false)]
-        public string LastTxsInOnchain { get; set; }
+        public int LastTxsInOnchain { get; set; }
 
         /// <summary>
-        /// Time when last IN NFT transaction occurred
+        /// Unix timestamp when last IN NFT transaction occurred
         /// </summary>
-        /// <value>Time when last IN NFT transaction occurred</value>
+        /// <value>Unix timestamp when last IN NFT transaction occurred</value>
         [DataMember(Name="last_txs_in_nft", EmitDefaultValue=false)]
-        public string LastTxsInNft { get; set; }
+        public int LastTxsInNft { get; set; }
 
         /// <summary>
-        /// Time when last IN gaming transaction occurred
+        /// Unix timestamp when last IN gaming transaction occurred
         /// </summary>
-        /// <value>Time when last IN gaming transaction occurred</value>
+        /// <value>Unix timestamp when last IN gaming transaction occurred</value>
         [DataMember(Name="last_txs_in_gaming", EmitDefaultValue=false)]
-        public string LastTxsInGaming { get; set; }
+        public int LastTxsInGaming { get; set; }
 
         /// <summary>
-        /// Time when last IN gambling transaction occurred
+        /// Unix timestamp when last IN gambling transaction occurred
         /// </summary>
-        /// <value>Time when last IN gambling transaction occurred</value>
+        /// <value>Unix timestamp when last IN gambling transaction occurred</value>
         [DataMember(Name="last_txs_in_gambling", EmitDefaultValue=false)]
-        public string LastTxsInGambling { get; set; }
+        public int LastTxsInGambling { get; set; }
 
         /// <summary>
-        /// Time when last OUT transaction occurred
+        /// Unix timestamp when last OUT transaction occurred
         /// </summary>
-        /// <value>Time when last OUT transaction occurred</value>
+        /// <value>Unix timestamp when last OUT transaction occurred</value>
         [DataMember(Name="last_txs_out_onchain", EmitDefaultValue=false)]
-        public string LastTxsOutOnchain { get; set; }
+        public int LastTxsOutOnchain { get; set; }
 
         /// <summary>
-        /// Time when last OUT NFT transaction occurred
+        /// Unix timestamp when last OUT NFT transaction occurred
         /// </summary>
-        /// <value>Time when last OUT NFT transaction occurred</value>
+        /// <value>Unix timestamp when last OUT NFT transaction occurred</value>
         [DataMember(Name="last_txs_out_nft", EmitDefaultValue=false)]
-        public string LastTxsOutNft { get; set; }
+        public int LastTxsOutNft { get; set; }
 
         /// <summary>
-        /// Time when last OUT gaming transaction occurred
+        /// Unix timestamp when last OUT gaming transaction occurred
         /// </summary>
-        /// <value>Time when last OUT gaming transaction occurred</value>
+        /// <value>Unix timestamp when last OUT gaming transaction occurred</value>
         [DataMember(Name="last_txs_out_gaming", EmitDefaultValue=false)]
-        public string LastTxsOutGaming { get; set; }
+        public int LastTxsOutGaming { get; set; }
 
         /// <summary>
-        /// Time when last OUT gambling transaction occurred
+        /// Unix timestamp when last OUT gambling transaction occurred
         /// </summary>
-        /// <value>Time when last OUT gambling transaction occurred</value>
+        /// <value>Unix timestamp when last OUT gambling transaction occurred</value>
         [DataMember(Name="last_txs_out_gambling", EmitDefaultValue=false)]
-        public string LastTxsOutGambling { get; set; }
+        public int LastTxsOutGambling { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
